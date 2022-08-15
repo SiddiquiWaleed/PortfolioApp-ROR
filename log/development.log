@@ -6186,3 +6186,121 @@ Processing by PortfoliosController#angular as HTML
 Completed 200 OK in 54ms (Views: 49.1ms | ActiveRecord: 0.8ms | Allocations: 5267)
 
 
+  [1m[36mPortfolio Load (24.3ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  [1m[36mPortfolio Count (8.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "portfolios"[0m
+  [1m[36mPortfolio Load (0.3ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" ORDER BY "portfolios"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8536980426618662865)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (3.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddBadgeToSkills (20220815204807)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (47.3ms)[0m  [1m[35mALTER TABLE "skills" ADD "badge" text[0m
+  [1m[36mActiveRecord::SchemaMigration Create (4.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220815204807"]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8536980426618662865)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mSkill Load (50.0ms)[0m  [1m[34mSELECT "skills".* FROM "skills" ORDER BY "skills"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (8.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSkill Create (12.7ms)[0m  [1m[32mINSERT INTO "skills" ("title", "percent_utilize", "created_at", "updated_at", "badge") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Badge test"], ["percent_utilize", 60], ["created_at", "2022-08-15 21:00:05.151132"], ["updated_at", "2022-08-15 21:00:05.151132"], ["badge", "http://placehold.it/\#{height}x\#{width}"]]
+  [1m[36mTRANSACTION (8.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (295.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSkill Create (824.3ms)[0m  [1m[32mINSERT INTO "skills" ("title", "percent_utilize", "created_at", "updated_at", "badge") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Badge test"], ["percent_utilize", 60], ["created_at", "2022-08-15 21:04:16.108003"], ["updated_at", "2022-08-15 21:04:16.108003"], ["badge", "http://placehold.it/\#{height}x\#{width}"]]
+  [1m[36mTRANSACTION (28.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSkill Create (24.6ms)[0m  [1m[32mINSERT INTO "skills" ("title", "percent_utilize", "created_at", "updated_at", "badge") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Badge test 1"], ["percent_utilize", 60], ["created_at", "2022-08-15 21:05:28.234735"], ["updated_at", "2022-08-15 21:05:28.234735"], ["badge", "http://placehold.it/\#{height}x\#{width}"]]
+  [1m[36mTRANSACTION (5.9ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/portfolios" for ::1 at 2022-08-16 02:07:28 +0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PortfoliosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/index.html.erb within layouts/application
+  [1m[36mPortfolio Load (40.8ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  ↳ app/views/portfolios/index.html.erb:4
+  Rendered portfolios/index.html.erb within layouts/application (Duration: 104.8ms | Allocations: 8808)
+  Rendered layout layouts/application.html.erb (Duration: 141.6ms | Allocations: 44409)
+Completed 200 OK in 155ms (Views: 48.6ms | ActiveRecord: 95.9ms | Allocations: 50922)
+
+
+Started GET "/portfolios/new" for ::1 at 2022-08-16 02:07:31 +0500
+Processing by PortfoliosController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/new.html.erb within layouts/application
+  Rendered portfolios/new.html.erb within layouts/application (Duration: 28.8ms | Allocations: 3956)
+  Rendered layout layouts/application.html.erb (Duration: 43.4ms | Allocations: 6175)
+Completed 200 OK in 53ms (Views: 45.3ms | ActiveRecord: 0.0ms | Allocations: 6644)
+
+
+Started POST "/portfolios" for ::1 at 2022-08-16 02:07:43 +0500
+Processing by PortfoliosController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "portfolio"=>{"title"=>"test concern", "subtitle"=>"abcdq", "body"=>"abcd"}, "commit"=>"Create Portfolio"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/portfolios_controller.rb:18:in `block in create'
+  [1m[36mPortfolio Create (12.9ms)[0m  [1m[32mINSERT INTO "portfolios" ("title", "subtitle", "body", "main_image", "thumb_image", "text", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "test concern"], ["subtitle", "abcdq"], ["body", "abcd"], ["main_image", "http://placehold.it/\#{height}x\#{width}"], ["thumb_image", "http://placehold.it/\#{height}x\#{width}"], ["text", nil], ["created_at", "2022-08-15 21:07:43.968768"], ["updated_at", "2022-08-15 21:07:43.968768"]]
+  ↳ app/controllers/portfolios_controller.rb:18:in `block in create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/portfolios_controller.rb:18:in `block in create'
+Redirected to http://localhost:3000/portfolios
+Completed 302 Found in 41ms (ActiveRecord: 13.4ms | Allocations: 4020)
+
+
+Started GET "/portfolios" for ::1 at 2022-08-16 02:07:43 +0500
+Processing by PortfoliosController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/index.html.erb within layouts/application
+  [1m[36mPortfolio Load (0.3ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  ↳ app/views/portfolios/index.html.erb:4
+  Rendered portfolios/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1781)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 4401)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.3ms | Allocations: 4786)
+
+
+Started GET "/portfolios/new" for ::1 at 2022-08-16 02:08:32 +0500
+Processing by PortfoliosController#new as HTML
+Completed 500 Internal Server Error in 98ms (ActiveRecord: 84.2ms | Allocations: 3653)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 2)):
+  
+app/models/concerns/placeholder.rb:4:in `image_generator'
+app/models/portfolio.rb:16:in `set_defaults'
+app/controllers/portfolios_controller.rb:12:in `new'
+Started GET "/portfolios/new" for ::1 at 2022-08-16 02:08:49 +0500
+Processing by PortfoliosController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/new.html.erb within layouts/application
+  Rendered portfolios/new.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1549)
+  Rendered layout layouts/application.html.erb (Duration: 45.6ms | Allocations: 15280)
+Completed 200 OK in 93ms (Views: 48.4ms | ActiveRecord: 28.9ms | Allocations: 19276)
+
+
+Started POST "/portfolios" for ::1 at 2022-08-16 02:08:58 +0500
+Processing by PortfoliosController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "portfolio"=>{"title"=>"test 3", "subtitle"=>"avsfds", "body"=>"asd"}, "commit"=>"Create Portfolio"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/portfolios_controller.rb:18:in `block in create'
+  [1m[36mPortfolio Create (5.4ms)[0m  [1m[32mINSERT INTO "portfolios" ("title", "subtitle", "body", "main_image", "thumb_image", "text", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "test 3"], ["subtitle", "avsfds"], ["body", "asd"], ["main_image", "http://placehold.it/600x400"], ["thumb_image", "http://placehold.it/350x200"], ["text", nil], ["created_at", "2022-08-15 21:08:58.313126"], ["updated_at", "2022-08-15 21:08:58.313126"]]
+  ↳ app/controllers/portfolios_controller.rb:18:in `block in create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/portfolios_controller.rb:18:in `block in create'
+Redirected to http://localhost:3000/portfolios
+Completed 302 Found in 16ms (ActiveRecord: 6.0ms | Allocations: 2570)
+
+
+Started GET "/portfolios" for ::1 at 2022-08-16 02:08:58 +0500
+Processing by PortfoliosController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/index.html.erb within layouts/application
+  [1m[36mPortfolio Load (0.3ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  ↳ app/views/portfolios/index.html.erb:4
+  Rendered portfolios/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1968)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 4591)
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.3ms | Allocations: 4962)
+
+
+  [1m[36mTRANSACTION (11.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSkill Create (17.7ms)[0m  [1m[32mINSERT INTO "skills" ("title", "percent_utilize", "created_at", "updated_at", "badge") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Badge test 1"], ["percent_utilize", 50], ["created_at", "2022-08-15 21:09:28.625342"], ["updated_at", "2022-08-15 21:09:28.625342"], ["badge", "http://placehold.it/\#{height}x\#{width}"]]
+  [1m[36mTRANSACTION (12.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSkill Create (5.9ms)[0m  [1m[32mINSERT INTO "skills" ("title", "percent_utilize", "created_at", "updated_at", "badge") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Badge test 3"], ["percent_utilize", 50], ["created_at", "2022-08-15 21:10:03.745335"], ["updated_at", "2022-08-15 21:10:03.745335"], ["badge", "http://placehold.it/250x250"]]
+  [1m[36mTRANSACTION (5.3ms)[0m  [1m[35mCOMMIT[0m
