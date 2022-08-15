@@ -1,0 +1,8 @@
+<h1>Show Page</h1>
+
+<div>
+	<%= @portfolio_item.title %><br>
+	<%= @portfolio_item.subtitle %><br>
+	<%= @portfolio_item.body %>
+	<%= button_to "Destroy this portfolio", portfolio_path(@portfolio_item), method: :delete %>
+</div>
