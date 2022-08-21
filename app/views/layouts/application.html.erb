@@ -8,7 +8,6 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-     <%= link_to " exit", users_sign_out_path, method: :delete %>
   </head>
 
   <body>
@@ -19,6 +18,12 @@
   <% if alert %>
     <p class="alert alert-danger"><%= alert %></p>
   <% end %>
+    <% if current_user %>
+      <%= link_to "Logout", users_sign_out_path, method: :delete %>
+    <% else %>
+      <%= link_to " Login", new_user_session_path %>
+      <%= link_to " Signup", new_user_registration_path %>
+    <% end %>
     <%= yield %>
   </body>
 </html>
