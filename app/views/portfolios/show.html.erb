@@ -4,5 +4,9 @@
 	<%= @portfolio_item.title %><br>
 	<%= @portfolio_item.subtitle %><br>
 	<%= @portfolio_item.body %>
+	<h1>Technologies</h1>
+	<% @portfolio_item.technologies.each do |technology| %>
+	<p><%= technology.name %></p>
+	<% end %>
 	<%= button_to "Destroy this portfolio", portfolio_path(@portfolio_item), method: :delete %>
 </div>

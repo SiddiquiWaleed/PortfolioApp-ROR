@@ -10,10 +10,12 @@ class PortfoliosController < ApplicationController
 
 	def new
 	 @portfolio_item = Portfolio.new
+   3.times { @portfolio_item.technologies.build }
 	end
 
 	def create
     @portfolio_item = Portfolio.new(portfolio_params)
+    byebug
     respond_to do |format|
       if @portfolio_item.save
         format.html { redirect_to portfolios_path, notice: "Portfolio was successfully created." }
@@ -52,7 +54,7 @@ class PortfoliosController < ApplicationController
   end
 
   def portfolio_params
-    params.require(:portfolio).permit(:title, :subtitle, :body)
+    params.require(:portfolio).permit(:title, :subtitle, :body, technologies_attributes: [:name])
   end
 
 end

@@ -6710,3 +6710,11 @@ FOREIGN KEY ("portfolio_id")
   [1m[36mTechnology Load (0.2ms)[0m  [1m[34mSELECT "technologies".* FROM "technologies" WHERE "technologies"."portfolio_id" = $1[0m  [["portfolio_id", 10]]
   [1m[36mPortfolio Load (0.9ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" ORDER BY "portfolios"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
   [1m[36mTechnology Load (0.2ms)[0m  [1m[34mSELECT "technologies".* FROM "technologies" WHERE "technologies"."portfolio_id" = $1[0m  [["portfolio_id", 10]]
+  [1m[36mPortfolio Load (53.1ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" ORDER BY "portfolios"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mPortfolio Load (8.9ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" ORDER BY "portfolios"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTechnology Load (7.1ms)[0m  [1m[34mSELECT "technologies".* FROM "technologies" WHERE "technologies"."portfolio_id" = $1[0m  [["portfolio_id", 11]]
+  [1m[36mPortfolio Load (6.4ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" ORDER BY "portfolios"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTechnology Count (8.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "technologies" WHERE "technologies"."portfolio_id" = $1[0m  [["portfolio_id", 11]]
+  [1m[36mBlog Load (568.4ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  [1m[36mBlog Pluck (10.8ms)[0m  [1m[34mSELECT "blogs"."title" FROM "blogs"[0m
+  [1m[36mBlog Pluck (0.7ms)[0m  [1m[34mSELECT "blogs"."title" FROM "blogs"[0m
