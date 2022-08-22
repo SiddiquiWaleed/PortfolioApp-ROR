@@ -8503,3 +8503,97 @@ Completed 200 OK in 75ms (Views: 36.8ms | ActiveRecord: 29.1ms | Allocations: 61
 
 
   [1m[36mUser Load (64.6ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/" for ::1 at 2022-08-22 21:25:26 +0500
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mBlog Load (260.7ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:4
+  [1m[36mSkill Load (76.5ms)[0m  [1m[34mSELECT "skills".* FROM "skills" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:7
+  Rendered pages/home.html.erb within layouts/application (Duration: 6444.0ms | Allocations: 8459)
+  [1m[36mUser Load (61.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:21
+  Rendered layout layouts/application.html.erb (Duration: 6661.1ms | Allocations: 25569)
+Completed 200 OK in 6914ms (Views: 6705.9ms | ActiveRecord: 2318.5ms | Allocations: 32284)
+
+
+Started GET "/users/sign_out" for ::1 at 2022-08-22 21:25:44 +0500
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 75ms (ActiveRecord: 0.8ms | Allocations: 2206)
+
+
+Started GET "/" for ::1 at 2022-08-22 21:25:44 +0500
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mBlog Load (0.4ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:4
+  [1m[36mSkill Load (0.2ms)[0m  [1m[34mSELECT "skills".* FROM "skills" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:7
+  Rendered pages/home.html.erb within layouts/application (Duration: 8.4ms | Allocations: 2376)
+  Rendered layout layouts/application.html.erb (Duration: 15.1ms | Allocations: 5178)
+Completed 200 OK in 17ms (Views: 15.2ms | ActiveRecord: 0.6ms | Allocations: 5535)
+
+
+Started GET "/login" for ::1 at 2022-08-22 21:25:47 +0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.4ms | Allocations: 411)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 16.5ms | Allocations: 2463)
+  Rendered layout layouts/application.html.erb (Duration: 25.6ms | Allocations: 4882)
+Completed 200 OK in 41ms (Views: 33.7ms | ActiveRecord: 0.0ms | Allocations: 6399)
+
+
+Started GET "/login" for ::1 at 2022-08-22 21:25:50 +0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 142)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 11.1ms | Allocations: 1273)
+  Rendered layout layouts/application.html.erb (Duration: 18.0ms | Allocations: 3607)
+Completed 200 OK in 22ms (Views: 19.1ms | ActiveRecord: 0.0ms | Allocations: 4502)
+
+
+Started GET "/register" for ::1 at 2022-08-22 21:25:55 +0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 105)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 4.9ms | Allocations: 1557)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 3969)
+Completed 200 OK in 15ms (Views: 11.9ms | ActiveRecord: 0.0ms | Allocations: 5384)
+
+
+Started POST "/" for ::1 at 2022-08-22 21:26:15 +0500
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"waleed+3@gmail.com", "name"=>"waleedadnan", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+[31mUnpermitted parameter: :password_confirmation. Context: { controller: Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x000000012fe53b40>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"waleed+3@gmail.com", "name"=>"waleedadnan", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up", "controller"=>"devise/registrations", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (17.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (22.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "waleed+3@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (13.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "waleed+3@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-08-22 16:26:16.082633"], ["updated_at", "2022-08-22 16:26:16.082633"], ["name", "waleedadnan"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 492ms (ActiveRecord: 53.8ms | Allocations: 5855)
+
+
+Started GET "/" for ::1 at 2022-08-22 21:26:16 +0500
+Processing by PagesController#home as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mBlog Load (0.7ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:4
+  [1m[36mSkill Load (0.2ms)[0m  [1m[34mSELECT "skills".* FROM "skills" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:7
+  Rendered pages/home.html.erb within layouts/application (Duration: 7.9ms | Allocations: 2374)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:21
+  Rendered layout layouts/application.html.erb (Duration: 25.6ms | Allocations: 5812)
+Completed 200 OK in 28ms (Views: 25.2ms | ActiveRecord: 1.3ms | Allocations: 6171)
+
+
+  [1m[36mUser Load (35.0ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
