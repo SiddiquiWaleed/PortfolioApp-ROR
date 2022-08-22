@@ -8275,3 +8275,231 @@ Processing by PagesController#home as HTML
 Completed 200 OK in 26ms (Views: 25.0ms | ActiveRecord: 0.7ms | Allocations: 5510)
 
 
+Started GET "/" for ::1 at 2022-08-22 20:44:38 +0500
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mBlog Load (13.4ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:4
+  [1m[36mSkill Load (61.0ms)[0m  [1m[34mSELECT "skills".* FROM "skills" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:7
+  Rendered pages/home.html.erb within layouts/application (Duration: 3057.9ms | Allocations: 5538)
+  Rendered layout layouts/application.html.erb (Duration: 3197.5ms | Allocations: 8796)
+Completed 200 OK in 3632ms (Views: 3423.2ms | ActiveRecord: 1106.4ms | Allocations: 9873)
+
+
+Started GET "/register" for ::1 at 2022-08-22 20:44:49 +0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 6.0ms | Allocations: 235)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 173.7ms | Allocations: 3110)
+  Rendered layout layouts/application.html.erb (Duration: 174.4ms | Allocations: 3189)
+Completed 500 Internal Server Error in 281ms (ActiveRecord: 0.0ms | Allocations: 4623)
+
+
+  
+ActionView::Template::Error (undefined method `name_field' for #<ActionView::Helpers::FormBuilder:0x0000000143f93f50 @nested_child_index={}, @options={:allow_method_names_outside_object=>false, :skip_default_ids=>false, :as=>:user, :html=>{:class=>"new_user", :id=>"new_user"}, :local=>true}, @template=#<ActionView::Base:0x0000000000d520>, @object=#<User id: nil, email: "", created_at: nil, updated_at: nil, name: nil>, @object_name=:user, @default_options={:skip_default_ids=>false, :allow_method_names_outside_object=>false}, @default_html_options={}, @multipart=nil, @index=nil>
+Did you mean?  number_field
+               range_field
+               time_field
+               date_field):
+     5: 
+     6:   <div class="field">
+     7:     <%= f.label :name %><br />
+     8:     <%= f.name_field :name, autofocus: true, autocomplete: "name" %>
+     9:   </div>
+    10:   <div class="field">
+    11:     <%= f.label :email %><br />
+  
+app/views/devise/registrations/new.html.erb:8
+app/views/devise/registrations/new.html.erb:3
+Started GET "/register" for ::1 at 2022-08-22 20:46:19 +0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 2.7ms | Allocations: 235)
+  Rendered devise/shared/_links.html.erb (Duration: 3.1ms | Allocations: 527)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 52.6ms | Allocations: 2782)
+  Rendered layout layouts/application.html.erb (Duration: 105.4ms | Allocations: 5615)
+Completed 200 OK in 236ms (Views: 149.3ms | ActiveRecord: 0.0ms | Allocations: 7252)
+
+
+Started POST "/" for ::1 at 2022-08-22 20:46:39 +0500
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"waleed", "email"=>"waleed+69@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+[31mUnpermitted parameter: :name. Context: { controller: Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x0000000153e91160>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"waleed", "email"=>"waleed+69@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up", "controller"=>"devise/registrations", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (31.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (70.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "waleed+69@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (57.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "waleed+69@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-08-22 15:46:40.284455"], ["updated_at", "2022-08-22 15:46:40.284455"], ["name", nil]]
+  [1m[36mTRANSACTION (13.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 685ms (ActiveRecord: 173.1ms | Allocations: 5660)
+
+
+Started GET "/" for ::1 at 2022-08-22 20:46:40 +0500
+Processing by PagesController#home as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mBlog Load (0.7ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:4
+  [1m[36mSkill Load (0.4ms)[0m  [1m[34mSELECT "skills".* FROM "skills" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:7
+  Rendered pages/home.html.erb within layouts/application (Duration: 12.3ms | Allocations: 2525)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:21
+  Rendered layout layouts/application.html.erb (Duration: 30.1ms | Allocations: 6053)
+Completed 200 OK in 36ms (Views: 32.5ms | ActiveRecord: 1.4ms | Allocations: 7005)
+
+
+  [1m[36mUser Load (559.7ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/users/sign_out" for ::1 at 2022-08-22 21:02:15 +0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (75.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (7.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 445ms (ActiveRecord: 391.2ms | Allocations: 15947)
+
+
+Started GET "/" for ::1 at 2022-08-22 21:02:17 +0500
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mBlog Load (81.5ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:4
+  [1m[36mSkill Load (15.5ms)[0m  [1m[34mSELECT "skills".* FROM "skills" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:7
+  Rendered pages/home.html.erb within layouts/application (Duration: 270.5ms | Allocations: 10433)
+  Rendered layout layouts/application.html.erb (Duration: 360.9ms | Allocations: 46158)
+Completed 200 OK in 383ms (Views: 146.6ms | ActiveRecord: 221.3ms | Allocations: 53886)
+
+
+Started GET "/register" for ::1 at 2022-08-22 21:02:22 +0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.8ms | Allocations: 247)
+  Rendered devise/shared/_links.html.erb (Duration: 10.4ms | Allocations: 672)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 48.7ms | Allocations: 4829)
+  Rendered layout layouts/application.html.erb (Duration: 62.4ms | Allocations: 7242)
+Completed 200 OK in 92ms (Views: 69.5ms | ActiveRecord: 0.0ms | Allocations: 8925)
+
+
+Started POST "/" for ::1 at 2022-08-22 21:02:49 +0500
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"adnan@gmail.com", "name"=>"adnan", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+[31mUnpermitted parameter: :password_confirmation. Context: { controller: Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x000000010309e418>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"adnan@gmail.com", "name"=>"adnan", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up", "controller"=>"devise/registrations", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (22.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (72.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "adnan@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (30.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "adnan@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-08-22 16:02:50.219322"], ["updated_at", "2022-08-22 16:02:50.219322"], ["name", "adnan"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 637ms (ActiveRecord: 126.5ms | Allocations: 8934)
+
+
+Started GET "/" for ::1 at 2022-08-22 21:02:50 +0500
+Processing by PagesController#home as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:4
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT "skills".* FROM "skills" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:7
+  Rendered pages/home.html.erb within layouts/application (Duration: 3.8ms | Allocations: 2374)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:21
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 5832)
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.7ms | Allocations: 6239)
+
+
+  [1m[36mUser Load (161.6ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/edit" for ::1 at 2022-08-22 21:04:17 +0500
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (202.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.7ms | Allocations: 18)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 29.6ms | Allocations: 2538)
+  Rendered layout layouts/application.html.erb (Duration: 44.5ms | Allocations: 4820)
+Completed 200 OK in 359ms (Views: 66.2ms | ActiveRecord: 202.0ms | Allocations: 6674)
+
+
+Started PUT "/" for ::1 at 2022-08-22 21:04:29 +0500
+Processing by Devise::RegistrationsController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"adnan@gmail.com", "name"=>"adnansiddiqui", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]"}, "commit"=>"Update"}
+  [1m[36mUser Load (176.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Load (7.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+[31mUnpermitted parameter: :password_confirmation. Context: { controller: Devise::RegistrationsController, action: update, request: #<ActionDispatch::Request:0x000000013fc09820>, params: {"_method"=>"put", "authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"adnan@gmail.com", "name"=>"adnansiddiqui", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]"}, "commit"=>"Update", "controller"=>"devise/registrations", "action"=>"update"} }[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 29.4ms | Allocations: 579)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 66.6ms | Allocations: 3134)
+  Rendered layout layouts/application.html.erb (Duration: 112.6ms | Allocations: 5475)
+Completed 200 OK in 1282ms (Views: 118.2ms | ActiveRecord: 183.9ms | Allocations: 9804)
+
+
+  [1m[36mUser Load (535.8ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started PUT "/" for ::1 at 2022-08-22 21:04:51 +0500
+Processing by Devise::RegistrationsController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"adnan@gmail.com", "name"=>"adnansiddiqui", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]"}, "commit"=>"Update"}
+  [1m[36mUser Load (7.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+[31mUnpermitted parameter: :password_confirmation. Context: { controller: Devise::RegistrationsController, action: update, request: #<ActionDispatch::Request:0x0000000138620370>, params: {"_method"=>"put", "authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"adnan@gmail.com", "name"=>"adnansiddiqui", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]"}, "commit"=>"Update", "controller"=>"devise/registrations", "action"=>"update"} }[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 4.6ms | Allocations: 478)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 21.3ms | Allocations: 3023)
+  Rendered layout layouts/application.html.erb (Duration: 54.7ms | Allocations: 5362)
+Completed 200 OK in 525ms (Views: 55.3ms | ActiveRecord: 7.8ms | Allocations: 8881)
+
+
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started PUT "/" for ::1 at 2022-08-22 21:05:15 +0500
+Processing by Devise::RegistrationsController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"adnan+1@gmail.com", "name"=>"adnansiddiqui", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]"}, "commit"=>"Update"}
+  [1m[36mUser Load (58.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Load (8.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+[31mUnpermitted parameter: :password_confirmation. Context: { controller: Devise::RegistrationsController, action: update, request: #<ActionDispatch::Request:0x0000000138651b78>, params: {"_method"=>"put", "authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"adnan+1@gmail.com", "name"=>"adnansiddiqui", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]"}, "commit"=>"Update", "controller"=>"devise/registrations", "action"=>"update"} }[0m
+  [1m[36mUser Exists? (13.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "adnan+1@gmail.com"], ["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 5.3ms | Allocations: 478)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 17.7ms | Allocations: 3022)
+  Rendered layout layouts/application.html.erb (Duration: 30.1ms | Allocations: 5361)
+Completed 200 OK in 632ms (Views: 31.7ms | ActiveRecord: 79.6ms | Allocations: 9896)
+
+
+  [1m[36mUser Load (50.8ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started PUT "/" for ::1 at 2022-08-22 21:05:41 +0500
+Processing by Devise::RegistrationsController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"adnan+1@gmail.com", "name"=>"adnansiddiqui", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]"}, "commit"=>"Update"}
+  [1m[36mUser Load (6.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+[31mUnpermitted parameter: :password_confirmation. Context: { controller: Devise::RegistrationsController, action: update, request: #<ActionDispatch::Request:0x000000012ff5da68>, params: {"_method"=>"put", "authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"adnan+1@gmail.com", "name"=>"adnansiddiqui", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]"}, "commit"=>"Update", "controller"=>"devise/registrations", "action"=>"update"} }[0m
+  [1m[36mTRANSACTION (6.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (8.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "adnan+1@gmail.com"], ["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Update (10.8ms)[0m  [1m[33mUPDATE "users" SET "email" = $1, "encrypted_password" = $2, "updated_at" = $3, "name" = $4 WHERE "users"."id" = $5[0m  [["email", "adnan+1@gmail.com"], ["encrypted_password", "[FILTERED]"], ["updated_at", "2022-08-22 16:05:42.538457"], ["name", "adnansiddiqui"], ["id", 11]]
+  [1m[36mTRANSACTION (14.2ms)[0m  [1m[35mCOMMIT[0m
+[31mUnpermitted parameter: :password_confirmation. Context: { controller: Devise::RegistrationsController, action: update, request: #<ActionDispatch::Request:0x000000012ff5da68>, params: {"_method"=>"put", "authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"adnan+1@gmail.com", "name"=>"adnansiddiqui", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]"}, "commit"=>"Update", "controller"=>"devise/registrations", "action"=>"update"} }[0m
+[31mUnpermitted parameter: :password_confirmation. Context: { controller: Devise::RegistrationsController, action: update, request: #<ActionDispatch::Request:0x000000012ff5da68>, params: {"_method"=>"put", "authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"adnan+1@gmail.com", "name"=>"adnansiddiqui", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]"}, "commit"=>"Update", "controller"=>"devise/registrations", "action"=>"update"} }[0m
+[31mUnpermitted parameter: :password_confirmation. Context: { controller: Devise::RegistrationsController, action: update, request: #<ActionDispatch::Request:0x000000012ff5da68>, params: {"_method"=>"put", "authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"adnan+1@gmail.com", "name"=>"adnansiddiqui", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]"}, "commit"=>"Update", "controller"=>"devise/registrations", "action"=>"update"} }[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 935ms (ActiveRecord: 47.2ms | Allocations: 7995)
+
+
+Started GET "/" for ::1 at 2022-08-22 21:05:42 +0500
+Processing by PagesController#home as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mBlog Load (28.5ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:4
+  [1m[36mSkill Load (0.3ms)[0m  [1m[34mSELECT "skills".* FROM "skills" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:7
+  Rendered pages/home.html.erb within layouts/application (Duration: 45.5ms | Allocations: 2374)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:21
+  Rendered layout layouts/application.html.erb (Duration: 64.1ms | Allocations: 5808)
+Completed 200 OK in 75ms (Views: 36.8ms | ActiveRecord: 29.1ms | Allocations: 6166)
+
+
+  [1m[36mUser Load (64.6ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
