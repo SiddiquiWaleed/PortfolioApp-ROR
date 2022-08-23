@@ -8597,3 +8597,41 @@ Completed 200 OK in 28ms (Views: 25.2ms | ActiveRecord: 1.3ms | Allocations: 617
 
 
   [1m[36mUser Load (35.0ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (64.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (13.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/" for ::1 at 2022-08-23 17:10:54 +0500
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (50.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:1
+  [1m[36mBlog Load (112.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:4
+  [1m[36mSkill Load (78.2ms)[0m  [1m[34mSELECT "skills".* FROM "skills" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:7
+  Rendered pages/home.html.erb within layouts/application (Duration: 4153.9ms | Allocations: 11832)
+  Rendered layout layouts/application.html.erb (Duration: 4214.0ms | Allocations: 26076)
+Completed 200 OK in 4375ms (Views: 4252.7ms | ActiveRecord: 2426.5ms | Allocations: 33090)
+
+
+Started GET "/users/sign_out" for ::1 at 2022-08-23 17:11:12 +0500
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (722.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 1685ms (ActiveRecord: 722.6ms | Allocations: 2207)
+
+
+Started GET "/" for ::1 at 2022-08-23 17:11:14 +0500
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mBlog Load (73.5ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:4
+  [1m[36mSkill Load (22.2ms)[0m  [1m[34mSELECT "skills".* FROM "skills" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:7
+  Rendered pages/home.html.erb within layouts/application (Duration: 145.1ms | Allocations: 2833)
+  Rendered layout layouts/application.html.erb (Duration: 160.3ms | Allocations: 5193)
+Completed 200 OK in 173ms (Views: 65.9ms | ActiveRecord: 95.7ms | Allocations: 5550)
+
+
