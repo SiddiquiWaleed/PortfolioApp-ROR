@@ -8635,3 +8635,189 @@ Processing by PagesController#home as HTML
 Completed 200 OK in 173ms (Views: 65.9ms | ActiveRecord: 95.7ms | Allocations: 5550)
 
 
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (4.6ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mPortfolio Load (4.6ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" ORDER BY "portfolios"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mPortfolio Load (78.9ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" ORDER BY "portfolios"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mPortfolio Load (8.2ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" ORDER BY "portfolios"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mPortfolio Load (0.4ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" ORDER BY "portfolios"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mPortfolio Load (0.6ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" ORDER BY "portfolios"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mPortfolio Load (1.4ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" ORDER BY "portfolios"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mPortfolio Load (7.9ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  [1m[36mPortfolio Load (1.3ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" ORDER BY "portfolios"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mPortfolio Load (0.9ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" ORDER BY "portfolios"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mPortfolio Load (6.1ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" ORDER BY "portfolios"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mPortfolio Load (6.6ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" ORDER BY "portfolios"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mPortfolio Load (0.8ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" ORDER BY "portfolios"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mPortfolio Load (6.8ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" ORDER BY "portfolios"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mPortfolio Load (1.8ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" ORDER BY "portfolios"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mPortfolio Load (0.4ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" ORDER BY "portfolios"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mPortfolio Load (109.9ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" ORDER BY "portfolios"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mPortfolio Load (20.8ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" ORDER BY "portfolios"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTechnology Load (10.5ms)[0m  [1m[34mSELECT "technologies".* FROM "technologies" WHERE "technologies"."portfolio_id" = $1[0m  [["portfolio_id", 14]]
+  [1m[36mPortfolio Load (11.9ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" ORDER BY "portfolios"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTechnology Load (6.4ms)[0m  [1m[34mSELECT "technologies".* FROM "technologies" WHERE "technologies"."portfolio_id" = $1 ORDER BY "technologies"."id" ASC LIMIT $2[0m  [["portfolio_id", 14], ["LIMIT", 1]]
+  [1m[36mPortfolio Load (0.3ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" ORDER BY "portfolios"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTechnology Load (0.2ms)[0m  [1m[34mSELECT "technologies".* FROM "technologies" WHERE "technologies"."portfolio_id" = $1 ORDER BY "technologies"."id" ASC LIMIT $2[0m  [["portfolio_id", 14], ["LIMIT", 1]]
+Started GET "/" for ::1 at 2022-08-24 17:35:26 +0500
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mBlog Load (234.4ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:4
+  [1m[36mSkill Load (40.8ms)[0m  [1m[34mSELECT "skills".* FROM "skills" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:7
+  Rendered pages/home.html.erb within layouts/application (Duration: 4267.1ms | Allocations: 9077)
+  Rendered layout layouts/application.html.erb (Duration: 4369.9ms | Allocations: 23398)
+Completed 200 OK in 4798ms (Views: 4451.3ms | ActiveRecord: 2362.5ms | Allocations: 30438)
+
+
+Started GET "/register" for ::1 at 2022-08-24 17:37:25 +0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.0ms | Allocations: 236)
+  Rendered devise/shared/_links.html.erb (Duration: 1.5ms | Allocations: 537)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 23.3ms | Allocations: 2776)
+  Rendered layout layouts/application.html.erb (Duration: 37.0ms | Allocations: 5209)
+Completed 200 OK in 362ms (Views: 45.0ms | ActiveRecord: 0.0ms | Allocations: 8697)
+
+
+Started POST "/" for ::1 at 2022-08-24 17:37:42 +0500
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"dev@gmail.com", "name"=>"dev", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+[31mUnpermitted parameter: :password_confirmation. Context: { controller: Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x000000012fd4f4b0>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"dev@gmail.com", "name"=>"dev", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up", "controller"=>"devise/registrations", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (135.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (183.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "dev@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (29.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "dev@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-08-24 12:37:43.162564"], ["updated_at", "2022-08-24 12:37:43.162564"], ["name", "dev"]]
+  [1m[36mTRANSACTION (42.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 1121ms (ActiveRecord: 390.0ms | Allocations: 6209)
+
+
+Started GET "/" for ::1 at 2022-08-24 17:37:43 +0500
+Processing by PagesController#home as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:1
+  [1m[36mBlog Load (71.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:4
+  [1m[36mSkill Load (0.4ms)[0m  [1m[34mSELECT "skills".* FROM "skills" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:7
+  Rendered pages/home.html.erb within layouts/application (Duration: 181.9ms | Allocations: 3778)
+  Rendered layout layouts/application.html.erb (Duration: 226.0ms | Allocations: 6093)
+Completed 200 OK in 228ms (Views: 155.0ms | ActiveRecord: 72.0ms | Allocations: 6512)
+
+
+Started GET "/portfolio/4" for ::1 at 2022-08-24 17:38:23 +0500
+Processing by PortfoliosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPortfolio Load (13.3ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/portfolios_controller.rb:44:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/show.html.erb within layouts/application
+  [1m[36mTechnology Load (12.5ms)[0m  [1m[34mSELECT "technologies".* FROM "technologies" WHERE "technologies"."portfolio_id" = $1[0m  [["portfolio_id", 4]]
+  ↳ app/views/portfolios/show.html.erb:8
+  Rendered portfolios/show.html.erb within layouts/application (Duration: 131.0ms | Allocations: 8075)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:21
+  Rendered layout layouts/application.html.erb (Duration: 209.3ms | Allocations: 11164)
+Completed 200 OK in 697ms (Views: 276.1ms | ActiveRecord: 208.6ms | Allocations: 20046)
+
+
+Started GET "/portfolio/4?q=twitter" for ::1 at 2022-08-24 17:38:45 +0500
+Processing by PortfoliosController#show as HTML
+  Parameters: {"q"=>"twitter", "id"=>"4"}
+  [1m[36mPortfolio Load (99.9ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/portfolios_controller.rb:44:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/show.html.erb within layouts/application
+  [1m[36mTechnology Load (4.6ms)[0m  [1m[34mSELECT "technologies".* FROM "technologies" WHERE "technologies"."portfolio_id" = $1[0m  [["portfolio_id", 4]]
+  ↳ app/views/portfolios/show.html.erb:8
+  Rendered portfolios/show.html.erb within layouts/application (Duration: 22.0ms | Allocations: 905)
+  [1m[36mUser Load (7.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:21
+  Rendered layout layouts/application.html.erb (Duration: 61.6ms | Allocations: 3908)
+Completed 200 OK in 211ms (Views: 51.8ms | ActiveRecord: 112.0ms | Allocations: 5115)
+
+
+Started GET "/portfolio/4?q=twitter" for ::1 at 2022-08-24 17:39:24 +0500
+Processing by PortfoliosController#show as HTML
+  Parameters: {"q"=>"twitter", "id"=>"4"}
+  [1m[36mPortfolio Load (529.6ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/portfolios_controller.rb:44:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/show.html.erb within layouts/application
+  [1m[36mTechnology Load (23.8ms)[0m  [1m[34mSELECT "technologies".* FROM "technologies" WHERE "technologies"."portfolio_id" = $1[0m  [["portfolio_id", 4]]
+  ↳ app/views/portfolios/show.html.erb:8
+  Rendered portfolios/show.html.erb within layouts/application (Duration: 46.3ms | Allocations: 1174)
+  [1m[36mUser Load (6.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:21
+  Rendered layout layouts/application.html.erb (Duration: 81.6ms | Allocations: 4708)
+Completed 200 OK in 797ms (Views: 69.7ms | ActiveRecord: 560.1ms | Allocations: 6657)
+
+
+Started GET "/portfolio/4?q=facebook" for ::1 at 2022-08-24 17:39:33 +0500
+Processing by PortfoliosController#show as HTML
+  Parameters: {"q"=>"facebook", "id"=>"4"}
+  [1m[36mPortfolio Load (0.7ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/portfolios_controller.rb:44:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/show.html.erb within layouts/application
+  [1m[36mTechnology Load (0.8ms)[0m  [1m[34mSELECT "technologies".* FROM "technologies" WHERE "technologies"."portfolio_id" = $1[0m  [["portfolio_id", 4]]
+  ↳ app/views/portfolios/show.html.erb:8
+  Rendered portfolios/show.html.erb within layouts/application (Duration: 23.2ms | Allocations: 905)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:21
+  Rendered layout layouts/application.html.erb (Duration: 67.5ms | Allocations: 3912)
+Completed 200 OK in 224ms (Views: 128.8ms | ActiveRecord: 2.0ms | Allocations: 5120)
+
+
+Started GET "/portfolio/4" for ::1 at 2022-08-24 17:39:47 +0500
+Processing by PortfoliosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPortfolio Load (292.6ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/portfolios_controller.rb:44:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/show.html.erb within layouts/application
+  [1m[36mTechnology Load (23.1ms)[0m  [1m[34mSELECT "technologies".* FROM "technologies" WHERE "technologies"."portfolio_id" = $1[0m  [["portfolio_id", 4]]
+  ↳ app/views/portfolios/show.html.erb:8
+  Rendered portfolios/show.html.erb within layouts/application (Duration: 55.7ms | Allocations: 1300)
+  [1m[36mUser Load (38.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:21
+  Rendered layout layouts/application.html.erb (Duration: 175.1ms | Allocations: 4307)
+Completed 200 OK in 665ms (Views: 114.8ms | ActiveRecord: 354.3ms | Allocations: 5133)
+
+
+Started GET "/portfolios" for ::1 at 2022-08-24 17:39:55 +0500
+Processing by PortfoliosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/index.html.erb within layouts/application
+  [1m[36mPortfolio Load (386.1ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  ↳ app/views/portfolios/index.html.erb:4
+  Rendered portfolios/index.html.erb within layouts/application (Duration: 445.0ms | Allocations: 2388)
+  [1m[36mUser Load (8.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:21
+  Rendered layout layouts/application.html.erb (Duration: 531.5ms | Allocations: 5799)
+Completed 200 OK in 572ms (Views: 153.8ms | ActiveRecord: 394.2ms | Allocations: 6211)
+
+
+Started GET "/portfolio/2" for ::1 at 2022-08-24 17:40:04 +0500
+Processing by PortfoliosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPortfolio Load (71.8ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/portfolios_controller.rb:44:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/show.html.erb within layouts/application
+  [1m[36mTechnology Load (78.5ms)[0m  [1m[34mSELECT "technologies".* FROM "technologies" WHERE "technologies"."portfolio_id" = $1[0m  [["portfolio_id", 2]]
+  ↳ app/views/portfolios/show.html.erb:8
+  Rendered portfolios/show.html.erb within layouts/application (Duration: 100.9ms | Allocations: 1301)
+  [1m[36mUser Load (24.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:21
+  Rendered layout layouts/application.html.erb (Duration: 179.6ms | Allocations: 4318)
+Completed 200 OK in 292ms (Views: 84.6ms | ActiveRecord: 174.9ms | Allocations: 5150)
+
+
