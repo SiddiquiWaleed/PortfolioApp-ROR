@@ -18,7 +18,7 @@
   <% if alert %>
     <p class="alert alert-danger"><%= alert %></p>
   <% end %>
-    <% if current_user %>
+    <% if current_user.is_a?(User) %>
       <%= link_to "Logout", users_sign_out_path, method: :delete %>
     <% else %>
       <%= link_to " Login", new_user_session_path %>
