@@ -10925,3 +10925,194 @@ Processing by BlogsController#index as HTML
 Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.2ms | Allocations: 4722)
 
 
+  [1m[36mPortfolio Load (1.0ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  [1m[36mPortfolio Load (0.5ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" ORDER BY "portfolios"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mPortfolio Load (0.6ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" ORDER BY "portfolios"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mPortfolio Load (0.3ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPortfolio Load (0.4ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  [1m[36mPortfolio Load (0.7ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPortfolio Load (0.3ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."subtitle" = $1[0m  [["subtitle", "Ruby on Rails"]]
+  [1m[36mPortfolio Count (3.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "portfolios" WHERE "portfolios"."subtitle" = $1[0m  [["subtitle", "Ruby on Rails"]]
+  [1m[36mPortfolio Load (0.5ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."subtitle" = $1 LIMIT $2[0m  [["subtitle", "Ruby on Rails"], ["LIMIT", 1]]
+Started GET "/blogs" for ::1 at 2022-08-27 02:23:33 +0500
+Processing by BlogsController#index as HTML
+  Rendering layout layouts/blog.html.erb
+  Rendering blogs/index.html.erb within layouts/blog
+  [1m[36mBlog Load (1.9ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:6
+  Rendered blogs/index.html.erb within layouts/blog (Duration: 74.9ms | Allocations: 5008)
+  Rendered shared/_navbar.html.erb (Duration: 1.9ms | Allocations: 354)
+  Rendered layout layouts/blog.html.erb (Duration: 165.5ms | Allocations: 8361)
+Completed 200 OK in 186ms (Views: 179.3ms | ActiveRecord: 23.0ms | Allocations: 9379)
+
+
+Started GET "/portfolios" for ::1 at 2022-08-27 02:23:37 +0500
+Processing by PortfoliosController#index as HTML
+  Rendering layout layouts/portfolio.html.erb
+  Rendering portfolios/index.html.erb within layouts/portfolio
+  [1m[36mPortfolio Load (1.5ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  ↳ app/views/portfolios/index.html.erb:4
+  Rendered portfolios/index.html.erb within layouts/portfolio (Duration: 35.3ms | Allocations: 5519)
+  Rendered layout layouts/portfolio.html.erb (Duration: 35.6ms | Allocations: 5598)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 1.5ms | Allocations: 6441)
+
+
+  
+ActionView::Template::Error (Missing partial portfolios/_portfolio with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/Users/waleedsiddiqui/Desktop/PortfolioApp-ROR/app/views"
+  * "/Users/waleedsiddiqui/.rbenv/versions/3.0.0/lib/ruby/gems/3.0.0/gems/devise-4.8.1/app/views"
+  * "/Users/waleedsiddiqui/.rbenv/versions/3.0.0/lib/ruby/gems/3.0.0/gems/actiontext-7.0.3.1/app/views"
+  * "/Users/waleedsiddiqui/.rbenv/versions/3.0.0/lib/ruby/gems/3.0.0/gems/actionmailbox-7.0.3.1/app/views"
+
+Did you mean?  portfolios/portfolio_item
+               layouts/action_text/contents/content
+               blogs/form
+               action_text/contents/content
+               active_storage/blobs/blob
+               blogs/blog):
+    2: <%= link_to 'Create new item', new_portfolio_path %>
+    3: 
+    4: <% @portfolio_items.each do |portfolio_item| %>
+    5: 	<br><%= render @portfolio_items %>
+    6: <% end %>
+  
+app/views/portfolios/index.html.erb:5
+app/views/portfolios/index.html.erb:4
+Started GET "/portfolios" for ::1 at 2022-08-27 02:24:05 +0500
+Processing by PortfoliosController#index as HTML
+  Rendering layout layouts/portfolio.html.erb
+  Rendering portfolios/index.html.erb within layouts/portfolio
+  [1m[36mPortfolio Load (0.4ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  ↳ app/views/portfolios/index.html.erb:4
+  Rendered portfolios/index.html.erb within layouts/portfolio (Duration: 33.0ms | Allocations: 5404)
+  Rendered layout layouts/portfolio.html.erb (Duration: 39.9ms | Allocations: 5484)
+Completed 500 Internal Server Error in 60ms (ActiveRecord: 0.4ms | Allocations: 6444)
+
+
+  
+ActionView::Template::Error (Missing partial portfolios/_portfolio with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/Users/waleedsiddiqui/Desktop/PortfolioApp-ROR/app/views"
+  * "/Users/waleedsiddiqui/.rbenv/versions/3.0.0/lib/ruby/gems/3.0.0/gems/devise-4.8.1/app/views"
+  * "/Users/waleedsiddiqui/.rbenv/versions/3.0.0/lib/ruby/gems/3.0.0/gems/actiontext-7.0.3.1/app/views"
+  * "/Users/waleedsiddiqui/.rbenv/versions/3.0.0/lib/ruby/gems/3.0.0/gems/actionmailbox-7.0.3.1/app/views"
+
+Did you mean?  portfolios/portfolio_item
+               layouts/action_text/contents/content
+               blogs/form
+               action_text/contents/content
+               active_storage/blobs/blob
+               blogs/blog):
+    1: <h1>Portfolio Items</h1>
+    2: <%= link_to 'Create new item', new_portfolio_path %>
+    3: 
+    4: 	<br><%= render @portfolio_items %>
+  
+app/views/portfolios/index.html.erb:4
+Started GET "/portfolios" for ::1 at 2022-08-27 02:24:59 +0500
+Processing by PortfoliosController#index as HTML
+  Rendering layout layouts/portfolio.html.erb
+  Rendering portfolios/index.html.erb within layouts/portfolio
+  [1m[36mPortfolio Load (0.6ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  ↳ app/views/portfolios/index.html.erb:4
+  Rendered collection of portfolios/_portfolio.html.erb [14 times] (Duration: 32.4ms | Allocations: 5075)
+  Rendered portfolios/index.html.erb within layouts/portfolio (Duration: 61.9ms | Allocations: 6292)
+  Rendered layout layouts/portfolio.html.erb (Duration: 62.2ms | Allocations: 6371)
+Completed 500 Internal Server Error in 83ms (ActiveRecord: 0.6ms | Allocations: 7333)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `portfolio_item' for #<ActionView::Base:0x00000000029f18>
+Did you mean?  @portfolio_items
+               portfolio_path
+               portfolio_url):
+    1: <%= link_to portfolio_item.title, portfolio_show_path(portfolio_item.id) %><br>
+    2: 	<p><%= portfolio_item.subtitle %></p>
+    3: 	<p><%= portfolio_item.body %></p>
+    4: 	<%= image_tag portfolio_item.thumb_image if !portfolio_item.thumb_image.nil? %>
+  
+app/views/portfolios/_portfolio.html.erb:1
+app/views/portfolios/index.html.erb:4
+Started GET "/portfolios" for ::1 at 2022-08-27 02:25:57 +0500
+Processing by PortfoliosController#index as HTML
+  Rendering layout layouts/portfolio.html.erb
+  Rendering portfolios/index.html.erb within layouts/portfolio
+  [1m[36mPortfolio Load (0.5ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  ↳ app/views/portfolios/index.html.erb:4
+  Rendered collection of portfolios/_portfolio.html.erb [14 times] (Duration: 20.5ms | Allocations: 5091)
+  Rendered portfolios/index.html.erb within layouts/portfolio (Duration: 54.8ms | Allocations: 6300)
+  Rendered layout layouts/portfolio.html.erb (Duration: 55.3ms | Allocations: 6379)
+Completed 500 Internal Server Error in 73ms (ActiveRecord: 0.5ms | Allocations: 7339)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `portfolio_item' for #<ActionView::Base:0x0000000002a260>
+Did you mean?  @portfolio_items
+               portfolio_path
+               portfolio_url):
+    2: 	<p><%= portfolio.subtitle %></p>
+    3: 	<p><%= portfolio.body %></p>
+    4: 	<%= image_tag portfolio.thumb_image if !portfolio.thumb_image.nil? %>
+    5: 	<%= link_to 'Edit item', edit_portfolio_path(portfolio_item.id) %>
+  
+app/views/portfolios/_portfolio.html.erb:5
+app/views/portfolios/index.html.erb:4
+Started GET "/portfolios" for ::1 at 2022-08-27 02:26:06 +0500
+Processing by PortfoliosController#index as HTML
+  Rendering layout layouts/portfolio.html.erb
+  Rendering portfolios/index.html.erb within layouts/portfolio
+  [1m[36mPortfolio Load (0.8ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  ↳ app/views/portfolios/index.html.erb:4
+  Rendered collection of portfolios/_portfolio.html.erb [14 times] (Duration: 3.1ms | Allocations: 1584)
+  Rendered portfolios/index.html.erb within layouts/portfolio (Duration: 38.9ms | Allocations: 2796)
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | Allocations: 354)
+  Rendered layout layouts/portfolio.html.erb (Duration: 82.3ms | Allocations: 6524)
+Completed 200 OK in 100ms (Views: 97.2ms | ActiveRecord: 0.8ms | Allocations: 7518)
+
+
+Started GET "/portfolio/1" for ::1 at 2022-08-27 02:27:40 +0500
+Processing by PortfoliosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPortfolio Load (0.9ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/portfolios_controller.rb:45:in `show'
+  Rendering layout layouts/portfolio.html.erb
+  Rendering portfolios/show.html.erb within layouts/portfolio
+  [1m[36mTechnology Load (1.8ms)[0m  [1m[34mSELECT "technologies".* FROM "technologies" WHERE "technologies"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+  ↳ app/views/portfolios/show.html.erb:8
+  Rendered portfolios/show.html.erb within layouts/portfolio (Duration: 75.4ms | Allocations: 11879)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 146)
+  Rendered layout layouts/portfolio.html.erb (Duration: 80.2ms | Allocations: 14466)
+Completed 200 OK in 99ms (Views: 67.4ms | ActiveRecord: 15.4ms | Allocations: 15980)
+
+
+Started GET "/portfolios/2/edit" for ::1 at 2022-08-27 02:27:45 +0500
+Processing by PortfoliosController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPortfolio Load (0.4ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/portfolios_controller.rb:30:in `edit'
+  Rendering layout layouts/portfolio.html.erb
+  Rendering portfolios/edit.html.erb within layouts/portfolio
+  Rendered portfolios/edit.html.erb within layouts/portfolio (Duration: 6.9ms | Allocations: 2153)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 146)
+  Rendered layout layouts/portfolio.html.erb (Duration: 10.3ms | Allocations: 4741)
+Completed 200 OK in 15ms (Views: 10.8ms | ActiveRecord: 0.4ms | Allocations: 5607)
+
+
+Started GET "/portfolio/3" for ::1 at 2022-08-27 02:27:49 +0500
+Processing by PortfoliosController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPortfolio Load (0.3ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/portfolios_controller.rb:45:in `show'
+  Rendering layout layouts/portfolio.html.erb
+  Rendering portfolios/show.html.erb within layouts/portfolio
+  [1m[36mTechnology Load (0.2ms)[0m  [1m[34mSELECT "technologies".* FROM "technologies" WHERE "technologies"."portfolio_id" = $1[0m  [["portfolio_id", 3]]
+  ↳ app/views/portfolios/show.html.erb:8
+  Rendered portfolios/show.html.erb within layouts/portfolio (Duration: 2.8ms | Allocations: 1272)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 146)
+  Rendered layout layouts/portfolio.html.erb (Duration: 7.1ms | Allocations: 3858)
+Completed 200 OK in 10ms (Views: 7.4ms | ActiveRecord: 0.5ms | Allocations: 4665)
+
+
