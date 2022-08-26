@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= @page_title %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "portfolio", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+
+  <% if notice %>
+    <p class="alert alert-success"><%= notice %></p>
+  <% end %>
+  <% if alert %>
+    <p class="alert alert-danger"><%= alert %></p>
+  <% end %>
+    <% if current_user.is_a?(User) %>
+      <%= link_to "Logout", users_sign_out_path, method: :delete %>
+    <% else %>
+      <%= link_to " Login", new_user_session_path %>
+      <%= link_to " Signup", new_user_registration_path %>
+    <% end %>
+    <%= yield %>
+    <div>
+      <div><%= link_to "Home", root_path %></div>
+      <div><%= link_to "About", about_path %></div>
+      <div><%= link_to "Contact Us", contact_path %></div>
+      <div><%= link_to "Blogs", blogs_path %></div>
+      <div><%= link_to "Portfolios", portfolios_path %></div>
+    </div>
+    <% if session[:source] %>
+      <p>Thanks for visiting me from <%= session[:source] %></p>
+    <% end %>
+  </body>
+</html>
