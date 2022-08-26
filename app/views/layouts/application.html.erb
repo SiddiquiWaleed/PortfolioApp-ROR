@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Railsapp</title>
+    <title><%= @page_title %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -18,6 +18,13 @@
   <% if alert %>
     <p class="alert alert-danger"><%= alert %></p>
   <% end %>
+  <div>
+    <div><%= link_to "Home", root_path %></div>
+    <div><%= link_to "About", about_path %></div>
+    <div><%= link_to "Contact Us", contact_path %></div>
+    <div><%= link_to "Blogs", blogs_path %></div>
+    <div><%= link_to "Portfolios", portfolios_path %></div>
+  </div>
     <% if current_user.is_a?(User) %>
       <%= link_to "Logout", users_sign_out_path, method: :delete %>
     <% else %>
